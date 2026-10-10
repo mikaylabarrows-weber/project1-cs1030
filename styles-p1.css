@@ -1,0 +1,271 @@
+/* Colors, Font Sizes, and Global Variables */
+:root {
+    /* colors */
+    --dark-purple: #250b3c;
+    --dark-lavender: #4c257b;
+    --purple: #7b4e97;
+    --lavender: #ae8bc3;
+    --light-lavender: #b7a6c1;
+    --black: #000;
+    --gray: #464646;
+    --light-gray: #b6b6b6;
+    --white: #dadada;
+
+    /* text size */
+    --xxs: 8px;
+    --xs: 12px;
+    --sm: 16px;     
+    --md: 24px;   
+    --lg: 32px;     
+    --xl: 48px;     
+    --xxl: 64px;
+
+    background-color: var(--dark-purple);
+    box-sizing: border-box;
+    position: relative;
+}
+/* Consistent Font Sizing Across the headers */
+h1 {
+    font-size: var(--xxl);
+}
+
+h2 {
+    font-size: var(--xl);
+    text-align: left;
+    padding: var(--md);
+    font-family: "Quantico", sans-serif;
+    color: var(--white);
+    font-size: var(--xl);
+}
+
+h3 {
+    font-size: var(--lg);
+}
+
+h4 {
+    font-size: var(--md);
+}
+
+h5 {
+    font-size: var(--sm);
+}
+
+h6 {
+    font-size: var(--xs);
+}
+
+/* Sticky navigation, takes up whole portion horizontally of page with top 0 and z-index 0 provides it the ability to scroll with the user. */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 0;
+    background-color: var(--purple);
+    font-family: "Google Sans Code", sans-serif;
+}
+
+section {
+    background-color: var(--dark-lavender);
+    border-style: double;
+    font-family: "Quantico", sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-family: "Quantico", sans-serif;
+    color: var(--white);
+    font-size: var(--xxl);
+}
+
+p, ul {
+    font-family: "Google Sans Code", sans-serif;
+    font-size: var(--sm);
+    color: var(--light-gray);
+}
+
+.intro {
+    text-align: center;
+    background-color: var(--dark-purple);
+}
+
+/* <---------------------------- Navigation ----------------------------> */
+
+/* Lines up listed nav items next to each other rather than on top of each other using display-flex and text decoration none. */
+.nav {
+    text-decoration: none;
+    padding: 1rem;
+    border-style: double;
+    overflow: hidden;
+    display: flex;
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: auto;
+    display: flex;
+    gap: 2rem;
+    color: var(--black);
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 1rem;
+    border-radius: 3px;
+    color: var(--white);
+}
+
+/* Hover Colors */
+.nav-list a:hover {
+    background-color: var(--light-lavender);
+    color: var(--black);
+    border-radius: 20px;
+}
+
+/* <---------------------------- Cards for Home Page ----------------------------> */
+
+/* Makes cards flexible and moves with window size changes and scrolling */
+.card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+/* Consistent card sizing and allows the entire card to be selected as a link */
+.card {
+    background-color: var(--dark-purple);
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    overflow: hidden;
+    text-decoration: none;
+    cursor: pointer; /* allows for clicking the entire card */
+}
+
+.card:hover {
+    background-color: var(--purple);
+    color: var(--white);
+}
+
+/* Card image takes up top 65% consistently and fits the picture to it, and then the content takes up the bottom 35%. */
+.card-image {
+    height: 65%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-content {
+    display: flex;
+    height: 35%;
+    width: 100%;
+    padding: 0.5rem;
+    flex-direction: column; /* lines up text in a column within content */
+    text-align: center;
+    box-sizing: border-box; /* Adjusts box and content within accurately, rather than slightly to the side */
+}
+
+.card-content h4 {
+    margin: 0.5rem;
+    text-align: center;
+    color: var(--white);
+}
+
+.card-content p {
+    margin: 2px;
+    padding: 0 1rem;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    color: var(--light-gray);
+}
+
+.card-content a {
+    text-decoration: none;
+    color: var(--light-gray);
+    font-weight: bold;
+    padding: 0.25rem;
+    margin: 10px;
+    border-radius: 3px;
+}
+
+a.card:hover {
+    background-color: var(--purple);
+    color: var(--white);
+    text-decoration: none;
+}
+
+/* keeps link color from changing */
+a.card:visited {
+    color: var(--light-gray);
+    text-decoration: none;
+}
+
+/* <---------------------------- About ----------------------------> */
+
+section.about-section {
+    text-align: justify;
+    border-color: var(--black);
+    background-color: var(--light-lavender);
+    scroll-margin-top: 40px; /* when a section is selected, it scrolls to that section and gives it some room/ */
+}
+
+section.about-section h2 {
+    margin: 0;
+    color: var(--black);
+}
+
+section.about-section p {
+    margin: var(--sm);
+    color: var(--black);
+}
+
+section.about-section a {
+    text-decoration: none;
+    color: var(--black);
+    background-color: #a252b0;
+    padding: 0.25rem;
+    margin: 10px;
+    border-radius: 3px
+}
+
+section.about-section a:hover {
+    background-color: var(--dark-purple);
+    color: var(--light-gray);
+}
+
+/* <---------------------------- Gallery ----------------------------> */
+
+/* similar to cards from earlier, but aligns pictures side by side and below the header */
+section.gallery {
+    gap: 2rem;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: justify;
+    border-color: var(--black);
+    color: var(--white);
+}
+
+section.gallery h2 {
+    width: 100%; /* shoves pictures below rather than in line with the header */
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.gallery img {
+    width: 350px;
+    height: auto;
+    border-radius: 10px;
+}
